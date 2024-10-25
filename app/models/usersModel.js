@@ -29,7 +29,7 @@ const usersSchema = new mongoose.Schema({
         type: String
     }
 }, {
-    timestamps: false
+    timestamps: false, versionKey: false
 });
 
 export const User = mongoose.model('User', usersSchema);

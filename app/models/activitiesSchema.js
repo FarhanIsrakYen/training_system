@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const activitiesSchema = new mongoose.Schema({
-    skill: {
+    skill_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Skill',
         required: true
@@ -27,6 +27,6 @@ const activitiesSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     }
-}, { timestamps: false });
+}, { timestamps: false, versionKey: false });
 
 export const Activity = mongoose.model('Activity', activitiesSchema);
