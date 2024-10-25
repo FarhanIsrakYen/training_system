@@ -1,0 +1,33 @@
+{
+  "name": "expressjsboilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Farhan Israk Yen",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.2",
+    "nodemailer": "^6.9.15",
+    "nodemon": "^3.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FarhanIsrakYen/training_system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FarhanIsrakYen/training_system/issues"
+  },
+  "homepage": "https://github.com/FarhanIsrakYen/training_system#readme",
+  "description": ""
+}
