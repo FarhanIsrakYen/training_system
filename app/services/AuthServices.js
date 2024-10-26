@@ -1,7 +1,7 @@
-import {User} from "../models/usersModel.js";
 import bcrypt from 'bcryptjs';
-import {TokenEncode} from "../utilities/tokenUtility.js";
-import {JWT_EXPIRE_TIME} from "../configs/config.js";
+import { JWT_EXPIRE_TIME } from "../configs/config.js";
+import { User } from "../models/usersModel.js";
+import { TokenEncode } from "../utilities/tokenUtility.js";
 
 
 export const LoginService = async(req, res) => {
@@ -26,7 +26,7 @@ export const LoginService = async(req, res) => {
         res.cookie("token", token, options);
         return {statusCode: 200, token: token, profile: user.profile};
     } catch (error) {
-        console.error('Error occurred during login', error.toString());
+        console.error("Error occurred during login", error.toString());
         return {statusCode: 401, message: "Invalid login"};
     }
 }

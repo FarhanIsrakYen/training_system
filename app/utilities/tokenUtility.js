@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import {JWT_EXPIRE_TIME, JWT_KEY} from "../configs/config.js";
+import { JWT_EXPIRE_TIME, JWT_KEY } from "../configs/config.js";
 
 export const TokenEncode = (email, password, userId, profile) => {
     const PAYLOAD = {email: email, password:password, userId:userId, profile: profile}

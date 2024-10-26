@@ -1,4 +1,4 @@
-import {GetAllSkillService} from "../services/SkillServices.js";
+import { GetAllSkillService } from "../services/SkillServices.js";
 
 
 export const getSkills = async(req, res) => {

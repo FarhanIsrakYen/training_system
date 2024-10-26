@@ -1,36 +1,33 @@
 import { TokenDecode } from "../utilities/tokenUtility.js";
 
-export const Authenticate = (req, res, next) => {
-    try {
-        let token = req.cookies["token"];
-        let decoded = TokenDecode(token)
-        if (decoded == null) {
-            return res.status(401).json({message: "Unauthorized user"})
-        }
-        else {
-            let options = {
-                maxAge: 30 * 24 * 60 * 60 * 1000,
-                httpOnly: true,
-                sameSite: "none",
-                secure: true,
-            };
-            res.cookie("token", decoded.refreshToken, options);
+export const AuthenticateAndAuthorize = (requiredProfile = null) => {
+    return (req, res, next) => {
+        try {
+            const token = req.cookies.token;
+            if (!token) {
+                return res.status(401).json({ message: "Unauthorized user" });
+            }
+            if (token !== req.headers.token) {
+                return res.status(401).json({ message: "Unauthorized user" });
+            }
+
+            const decoded = TokenDecode(token);
+            if (!decoded) {
+                return res.status(401).json({ message: "Unauthorized user" });
+            }
+
             req.headers.email = decoded.email;
             req.headers.userId = decoded.userId;
-            req.headers.role = decoded.role;
-            next()
-        }
-    } catch (error) {
-        console.error(error.toString());
-        return res.status(401).json({message: "Unauthorized user"})
-    }
-}
+            req.headers.profile = decoded.profile;
 
-export const Authorize = (role) => {
-    return (req, res, next) => {
-        if (req.headers.role !== role) {
-            return res.status(403).json({ message: 'Forbidden' });
+            if (requiredProfile && req.headers.profile !== requiredProfile) {
+                return res.status(401).json({ message: "Unauthorized user" });
+            }
+
+            next();
+        } catch (error) {
+            console.error("Error in AuthenticateAndAuthorize middleware:", error.toString());
+            return res.status(401).json({ message: "Unauthorized user" });
         }
-        next();
     };
-}
+};

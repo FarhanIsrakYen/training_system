@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "255d1bf8-08dd-42d4-8d7f-6f516b134396",
+		"name": "TrainingSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29343544"
+	},
+	"item": [
+		{
+			"name": "skills",
+			"item": [
+				{
+					"name": "getAllSkills",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR4TlBPa2VsZ1lHZXQ0cmNwVWJ3U3ouZjVqelhYZUZTMkFub05qTXFoZXBSV2lsVXlzb2hBdSIsInVzZXJJZCI6IjY3MWQzNTUwYjQwZTdkOThmMTg3YzE0NSIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE3Mjk5NzY4MzgsImV4cCI6NDMyMTk3NjgzOH0.UbaU_hAbkiIdlcUU_6irZ5ZIklhJ9z5c4TtEgR3BlyA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/v1/skills",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"skills"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QuZW1haWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkUjJVZUplTElIVDRmRDJOblZiTjR2ZVFNc20vS0V3OVN4RGlWOE5DWTUwYWFiQjdEUURnM1ciLCJ1c2VySWQiOiI2NzFiZmUwMGQzZDRlZTQ1MGVmZTI2NGIiLCJwcm9maWxlIjoiYm9hcmQiLCJpYXQiOjE3Mjk5NjM4MzMsImV4cCI6NDMyMTk2MzgzM30.R6Wy9Xg7EO00Dxf8s7u-kO0jR4wMBbGTa-pNuT4UnWY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"skill\": \"671bcfe8f17e4a3661cdabac\",\r\n  \"title\": \"Advanced JavaScript Training\",\r\n  \"description\": \"An intensive workshop on advanced JavaScript concepts, including closures, async programming, and memory optimization.\",\r\n  \"startDate\": \"2024-11-01T09:00:00Z\",\r\n  \"endDate\": \"2024-11-05T17:00:00Z\",\r\n  \"participants\": [\r\n    \"671bfe00d3d4ee450efe264b\",\r\n    \"671d3085b2877f87bc2eac40\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/v1/user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "activities",
+			"item": [
+				{
+					"name": "createActivity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QuZW1haWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkUjJVZUplTElIVDRmRDJOblZiTjR2ZVFNc20vS0V3OVN4RGlWOE5DWTUwYWFiQjdEUURnM1ciLCJ1c2VySWQiOiI2NzFiZmUwMGQzZDRlZTQ1MGVmZTI2NGIiLCJwcm9maWxlIjoiYm9hcmQiLCJpYXQiOjE3Mjk5NjM4MzMsImV4cCI6NDMyMTk2MzgzM30.R6Wy9Xg7EO00Dxf8s7u-kO0jR4wMBbGTa-pNuT4UnWY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"skill\": \"671bcfe8f17e4a3661cdabac\",\r\n  \"title\": \"Advanced JavaScript Training\",\r\n  \"description\": \"An intensive workshop on advanced JavaScript concepts, including closures, async programming, and memory optimization.\",\r\n  \"startdate\": \"2024-10-01T08:00:00Z\",\r\n  \"enddate\": \"2024-10-01T17:00:00Z\",\r\n  \"participants\": [\r\n    \"671bfe00d3d4ee450efe264b\",\r\n    \"671d3085b2877f87bc2eac40\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/v1/activity"
+					},
+					"response": []
+				},
+				{
+					"name": "updateActivity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QuZW1haWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkUjJVZUplTElIVDRmRDJOblZiTjR2ZVFNc20vS0V3OVN4RGlWOE5DWTUwYWFiQjdEUURnM1ciLCJ1c2VySWQiOiI2NzFiZmUwMGQzZDRlZTQ1MGVmZTI2NGIiLCJwcm9maWxlIjoiYm9hcmQiLCJpYXQiOjE3Mjk5NjM4MzMsImV4cCI6NDMyMTk2MzgzM30.R6Wy9Xg7EO00Dxf8s7u-kO0jR4wMBbGTa-pNuT4UnWY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"skill\": \"671bcfe8f17e4a3661cdabac\",\r\n  \"title\": \"Advanced JavaScript\",\r\n  \"description\": \"A workshop on advanced JavaScript concepts, including closures, async programming, and memory optimization.\",\r\n  \"startdate\": \"2024-11-01T08:00:00Z\",\r\n  \"enddate\": \"2024-10-01T17:00:00Z\",\r\n  \"participants\": [\r\n    \"671bfe00d3d4ee450efe264b\",\r\n    \"671d3085b2877f87bc2eac40\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/v1/activity/671d386bec12fc5fbe62a65a"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteActivity",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QuZW1haWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkUjJVZUplTElIVDRmRDJOblZiTjR2ZVFNc20vS0V3OVN4RGlWOE5DWTUwYWFiQjdEUURnM1ciLCJ1c2VySWQiOiI2NzFiZmUwMGQzZDRlZTQ1MGVmZTI2NGIiLCJwcm9maWxlIjoiYm9hcmQiLCJpYXQiOjE3Mjk5NjM4MzMsImV4cCI6NDMyMTk2MzgzM30.R6Wy9Xg7EO00Dxf8s7u-kO0jR4wMBbGTa-pNuT4UnWY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"skill\": \"671bcfe8f17e4a3661cdabac\",\r\n  \"title\": \"Advanced JavaScript\",\r\n  \"description\": \"A workshop on advanced JavaScript concepts, including closures, async programming, and memory optimization.\",\r\n  \"startdate\": \"2024-11-01T08:00:00Z\",\r\n  \"enddate\": \"2024-10-01T17:00:00Z\",\r\n  \"participants\": [\r\n    \"671bfe00d3d4ee450efe264b\",\r\n    \"671d3085b2877f87bc2eac40\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/v1/activity/671d386bec12fc5fbe62a65a"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllActivitties",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QuZW1haWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkUjJVZUplTElIVDRmRDJOblZiTjR2ZVFNc20vS0V3OVN4RGlWOE5DWTUwYWFiQjdEUURnM1ciLCJ1c2VySWQiOiI2NzFiZmUwMGQzZDRlZTQ1MGVmZTI2NGIiLCJwcm9maWxlIjoiYm9hcmQiLCJpYXQiOjE3Mjk5NjM4MzMsImV4cCI6NDMyMTk2MzgzM30.R6Wy9Xg7EO00Dxf8s7u-kO0jR4wMBbGTa-pNuT4UnWY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"skill\": \"671bcfe8f17e4a3661cdabac\",\r\n  \"title\": \"Advanced JavaScript\",\r\n  \"description\": \"A workshop on advanced JavaScript concepts, including closures, async programming, and memory optimization.\",\r\n  \"startdate\": \"2024-11-01T08:00:00Z\",\r\n  \"enddate\": \"2024-10-01T17:00:00Z\",\r\n  \"participants\": [\r\n    \"671bfe00d3d4ee450efe264b\",\r\n    \"671d3085b2877f87bc2eac40\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/activities/671bcfe8f17e4a3661cdabac",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"activities",
+								"671bcfe8f17e4a3661cdabac"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "startdate",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"SecurePassword123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/login"
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR4TlBPa2VsZ1lHZXQ0cmNwVWJ3U3ouZjVqelhYZUZTMkFub05qTXFoZXBSV2lsVXlzb2hBdSIsInVzZXJJZCI6IjY3MWQzNTUwYjQwZTdkOThmMTg3YzE0NSIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE3Mjk5Njc0NjksImV4cCI6NDMyMTk2NzQ2OX0.ltn28HNAYGk5qxdVRYTL7a9_yb3j4H1XJ163Ib1h_sc"
+		}
+	]
+}

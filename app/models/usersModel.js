@@ -26,8 +26,10 @@ const usersSchema = new mongoose.Schema({
         enum: ['board', 'expert', 'trainer', 'competitor']
     },
     skill: {
-        type: String
-    }
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Skill',
+        required: true
+    },
 }, {
     timestamps: false, versionKey: false
 });

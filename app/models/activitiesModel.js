@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const activitiesSchema = new mongoose.Schema({
-    skill_id: {
+    skill: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Skill',
         required: true
@@ -14,19 +14,18 @@ const activitiesSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    start_date: {
+    startdate: {
         type: Date,
         required: true
     },
-    end_date: {
+    enddate: {
         type: Date,
-        required: true,
-        validate: [date => date > this.start_date, 'End date must be after start date']
+        required: true
     },
-    participants: {
+    participants: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-    }
+        ref: 'User'
+    }]
 }, { timestamps: false, versionKey: false });
 
 export const Activity = mongoose.model('Activity', activitiesSchema);

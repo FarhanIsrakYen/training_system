@@ -1,25 +1,22 @@
-import {User} from "../models/usersModel.js";
 import bcrypt from 'bcryptjs';
-import jwt from "jsonwebtoken";
-import {JWT_KEY} from "../configs/config.js";
+import { User } from "../models/usersModel.js";
 
 export const RegistrationService = async(req) => {
     try {
-        let {email, password, firstname, lastname, institution, className, section, roll} = req.body;
+        let { name, email, username, password, profile, skill } = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
-        User.create({
+        await User.create({
+            name: name,
             email: email,
+            username: username,
             password: hashedPassword,
-            firstname: firstname,
-            lastname: lastname,
-            institution: institution,
-            className: className,
-            section: section,
-            roll: roll
+            profile: profile,
+            skill: skill
         });
-        return {message: 'Registered successfully'}
+        return { statusCode: 200, message: "create success"}
     } catch (error) {
-        return {message: error.toString()}
+        console.error("Error occurred during register", error.toString());
+        return { statusCode: 422, message: "Data cannot be processed" }
     }
 }
 
