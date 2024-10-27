@@ -1,6 +1,6 @@
-import {User} from "../models/usersModel.js";
-import {Skill} from "../models/skillsModel.js";
 import bcrypt from 'bcryptjs';
+import { Skill } from "../models/skillsModel.js";
+import { User } from "../models/usersModel.js";
 
 const user = {
     name: 'Test Admin',
