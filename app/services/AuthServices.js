@@ -9,11 +9,11 @@ export const LoginService = async(req, res) => {
         let {email, password} = req.body;
         const user = await User.findOne({email: email});
         if (!user) {
-            return {statusCode: 401, message: "Invalid login"};
+            return {statusCode: 401, message: "invalid login"};
         }
         const matchPassword = await bcrypt.compare(password, user.password)
         if (!matchPassword) {
-            return {statusCode: 401, message: "Invalid login"};
+            return {statusCode: 401, message: "invalid login"};
         }
 
         let options = {
@@ -27,6 +27,6 @@ export const LoginService = async(req, res) => {
         return {statusCode: 200, token: token, profile: user.profile};
     } catch (error) {
         console.error("Error occurred during login", error.toString());
-        return {statusCode: 401, message: "Invalid login"};
+        return {statusCode: 401, message: "invalid login"};
     }
 }

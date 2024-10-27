@@ -12,6 +12,7 @@ import {
     URL_ENCODE,
     WEB_CACHE
 } from "./app/configs/config.js";
+import { seedData } from "./app/database/seeder.js";
 import router from "./routes/api/v1.js";
 
 
@@ -32,6 +33,11 @@ app.set('etag', WEB_CACHE)
 
 mongoose.connect(DATABASE, {autoIndex:true}).then(async () => {
     console.log("DB connected")
+    await seedData().then(() =>
+        console.log("Data seeded successfully")
+    ).catch(() => {
+        console.log("Data seed failed")
+    });
 }).catch(() => {
     console.log("DB disconnected")
 })

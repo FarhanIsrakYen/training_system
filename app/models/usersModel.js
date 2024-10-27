@@ -27,8 +27,7 @@ const usersSchema = new mongoose.Schema({
     },
     skill: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Skill',
-        required: true
+        ref: 'Skill'
     },
 }, {
     timestamps: false, versionKey: false
